@@ -14,15 +14,23 @@ class Pokedex extends Component {
             { id: 133, name: 'Eevee', type: 'normal', base_experience: 65 }
         ]
     }
+
     render() {
+        let array = this.props.pokemon.map((p) => (
+            <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
+        ));
+        function randomPokemon() {
+            let random = array[Math.floor(Math.random() * array.length)]
+            return random;
+        }
+
         return (
             <div className='Pokedex'>
                 <h1>POKEDEX</h1>
-                {this.props.pokemon.map((p) => (
-                    <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
-                ))
-                }
-
+                {randomPokemon()}
+                {randomPokemon()}
+                {randomPokemon()}
+                {randomPokemon()}
             </div>
         );
     }
