@@ -17,56 +17,16 @@ class Pokedex extends Component {
     render() {
         return (
             <div className='Pokedex'>
-                <h1>POKEDEX</h1>
-                {this.props.pokemon.map((p) => (
-                    <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
-                ))
-                }
-
+                <h1 className="Pokedex-header">POKEDEX</h1>
+                <div className="Pokedex-cards">
+                    {this.props.pokemon.map((p) => (
+                        <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
+                    ))
+                    }
+                </div>
             </div>
         );
     }
 }
 
 export default Pokedex;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { Component } from 'react';
-// import Pokecard from './Pokecard';
-// class Pokedex extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <Pokecard
-//                     name="pickachu"
-//                     image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"
-//                     type="electric"
-//                     base_experience="55"
-//                 />
-//             </div>
-//         );
-//     }
-// }
-
-// export default Pokedex;
